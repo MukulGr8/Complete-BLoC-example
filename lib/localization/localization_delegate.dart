@@ -5,13 +5,12 @@ import 'package:flutter_app/localization/app_localization.dart';
 
 import 'package:flutter_app/main.dart';
 
-/// Localization delegate that builds an [AppLocalization] by passing to it the
-/// locale of the system.
+/// Localization delegate that builds an [AppLocalization] instance 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalization> {
   const AppLocalizationDelegate();
 
-  /// Returns a list of the supported locales that should (well, actually it
-  /// **must**) match the list of _supportedLocales_ in [FometApp]
+  /// Returns a list of the supported locales that must match the 
+  /// list of _supportedLocales_ in [LoginApp]
   @override
   bool isSupported(Locale locale) =>
       ['en', 'it'].contains(locale.languageCode);

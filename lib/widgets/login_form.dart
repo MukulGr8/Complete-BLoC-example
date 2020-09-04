@@ -5,6 +5,7 @@ import 'package:flutter_app/widgets/separator.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_app/localization/app_localization.dart';
 
+/// Actual login form, with validation, asking for email and password
 class LoginForm extends StatefulWidget {
   const LoginForm();
 

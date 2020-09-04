@@ -10,4 +10,4 @@ This is a complete example of a Flutter application relying on the [flutter_bloc
 
 ---
 
-![Login flow](https://github.com/albertodev01/Complete-BLoC-example/tree/master/static/login_flow.png)
+<p align="center"><img src="https://raw.githubusercontent.com/albertodev01/Complete-BLoC-example/master/static/login_flow.png" width="660" height="367" alt="Flutter BLoC complete example screenshot" /></p>

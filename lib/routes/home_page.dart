@@ -4,6 +4,8 @@ import 'package:flutter_app/widgets/login_page.dart';
 import 'package:flutter_app/widgets/welcome_page.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+/// Home widget containing a tab that programmatically swipes between the
+/// login form and the welcome page.
 class HomePage extends StatefulWidget {
   const HomePage();
 

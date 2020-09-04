@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_app/localization/localization_delegate.dart';
 
+/// Adds an useful localization method on a [BuildContext]
 extension LocalizationExt on BuildContext {
   String localize(String value) {
     final code = AppLocalization.of(this).locale.languageCode;
@@ -16,19 +17,8 @@ extension LocalizationExt on BuildContext {
   }
 }
 
-/// This class is responsible of returning the internationalized strings according
-/// with the locale that has been passed in the constructor.
-///
-/// The entire app should **never** use hard-coded strings; instead, it
-/// should take the values from this class. For instance, this is bad:
-///
-///     Text("Something")
-///
-/// But this is good:
-///
-///     Text(AppLocalization.of(context).something)
-///
-/// The list of supported locales can be set in [AppLocalizationDelegate].
+/// This class is responsible of translating strings into a certain
+/// languages defined by the [Locale] passed in the constructor.
 class AppLocalization {
   final Locale locale;
   const AppLocalization(this.locale);

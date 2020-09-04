@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/repository/user_repository.dart';
 
-/// Registration and authentication mock
+/// Registration and authentication mock (for testing)
 class TestUserRepository extends UserRepository {
   final String fakeEmail;
   final bool success;
