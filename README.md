@@ -1,16 +1,13 @@
-# flutter_app
+# Complete BLoC example
 
-A new Flutter application.
+This is a complete example of a Flutter application relying on the [flutter_bloc](https://pub.dev/packages/flutter_bloc) package by Felix Angelov. A complete overview of this example is available in the [Flutter Complete Reference](https://fluttercompletereference.com/) book (chapter **24**), which will be published at the end of September 2020.
 
-## Getting Started
+<p align="center">
+<a href="https://github.com/tenhobi/effective_dart"><img src="https://img.shields.io/badge/style-effective_dart-40c4ff.svg" alt="style: effective dart"></a>
+<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-purple.svg" alt="License: MIT"></a>
+<a href="https://github.com/felangel/bloc"><img src="https://tinyurl.com/bloc-library" alt="Bloc Library"></a>
+</p>
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Login flow](https://github.com/albertodev01/Complete-BLoC-example/tree/master/static/login_flow.png)

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/routes/home_page.dart';
 
+/// Route management class
 class RouteGenerator {
   const RouteGenerator._();
 

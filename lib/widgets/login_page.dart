@@ -9,6 +9,8 @@ import 'package:flutter_app/widgets/login_form.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 
+/// First widget to appear when the application starts containing
+/// the [LoginForm] form.
 class LoginPage extends StatelessWidget {
   const LoginPage();
 

@@ -3,6 +3,7 @@ import 'package:flutter_app/blocs/authentication_bloc.dart';
 import 'package:flutter_app/localization/app_localization.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+/// Landing page shown on successful authentication.
 class WelcomePage extends StatelessWidget {
   const WelcomePage();
 
@@ -15,8 +16,8 @@ class WelcomePage extends StatelessWidget {
           IconButton(
             icon: const Icon(Icons.exit_to_app),
             onPressed: () => context
-                .bloc<AuthenticationBloc>()
-                .add(LoggedOut()),
+              .bloc<AuthenticationBloc>()
+              .add(LoggedOut()),
           )
         ],
       ),
