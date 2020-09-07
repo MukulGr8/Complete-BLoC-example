@@ -9,9 +9,10 @@ class RouteGenerator {
     switch (settings.name) {
       case homePage:
         return MaterialPageRoute<HomePage>(
-          builder: (_) => const HomePage(), );
-        default:
-          throw RouteException("Route not found");
+          builder: (_) => const HomePage(),
+        );
+      default:
+        throw RouteException("Route not found");
     }
   }
 
@@ -21,5 +22,5 @@ class RouteGenerator {
 /// Exception thrown when a given route doesn't exist
 class RouteException implements Exception {
   final String message;
-  const RouteException( this.message);
+  const RouteException(this.message);
 }

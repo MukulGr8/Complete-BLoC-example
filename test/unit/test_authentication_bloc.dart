@@ -16,9 +16,9 @@ void main() {
       AuthenticationSuccess(),
     ],
   );
-  
 
-  blocTest<AuthenticationBloc, AuthenticationState>( 'Authentication failed',
+  blocTest<AuthenticationBloc, AuthenticationState>(
+    'Authentication failed',
     build: () => AuthenticationBloc(authenticationRepository),
     act: (bloc) => bloc.add(const LoggedOut()),
     expect: <AuthenticationState>[
@@ -26,5 +26,4 @@ void main() {
       AuthenticationRevoked(),
     ],
   );
-
 }

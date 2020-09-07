@@ -4,9 +4,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 
 class MockMaterialApp extends StatelessWidget {
   final Widget child;
-  const MockMaterialApp({
-    @required this.child
-  });
+  const MockMaterialApp({@required this.child});
 
   @override
   Widget build(BuildContext context) {

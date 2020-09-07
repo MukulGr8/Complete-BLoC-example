@@ -7,6 +7,7 @@ class FirebaseUserRepository extends UserRepository {
   const FirebaseUserRepository();
 
   @override
+
   /// Email of the signed user
   String get signedEmail {
     final user = FirebaseAuth.instance.currentUser;
@@ -19,13 +20,12 @@ class FirebaseUserRepository extends UserRepository {
   }
 
   @override
+
   /// Authentication on Firebase with username and password
   Future<bool> authenticate(String username, String password) async {
     try {
-      final result = await FirebaseAuth.instance.signInWithEmailAndPassword(
-          email: username,
-          password: password
-      );
+      final result = await FirebaseAuth.instance
+          .signInWithEmailAndPassword(email: username, password: password);
 
       return true;
     } on FirebaseAuthException catch (e) {
@@ -35,6 +35,7 @@ class FirebaseUserRepository extends UserRepository {
   }
 
   @override
+
   /// Registration on Firebase with username and password
   Future<bool> register(String username, String password) async {
     try {
@@ -51,6 +52,7 @@ class FirebaseUserRepository extends UserRepository {
   }
 
   @override
+
   /// Logout from Firebase
   Future<void> logOut() => FirebaseAuth.instance.signOut();
 }

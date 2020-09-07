@@ -28,9 +28,7 @@ class LoginPage extends StatelessWidget {
           authenticationBloc: authBloc,
           userRepository: repository,
         ),
-        child: const Center(
-          child: LoginForm()
-        ),
+        child: const Center(child: LoginForm()),
       ),
     );
   }

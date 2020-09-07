@@ -35,21 +35,13 @@ class _LoginFormState extends State<LoginForm> {
   }
 
   void loginButtonPressed(BuildContext context) {
-    context.bloc<CredentialsBloc>().add(
-      LoginButtonPressed(
-        username: emailController.text,
-        password: passwordController.text
-      )
-    );
+    context.bloc<CredentialsBloc>().add(LoginButtonPressed(
+        username: emailController.text, password: passwordController.text));
   }
 
   void registerButtonPressed(BuildContext context) {
-    context.bloc<CredentialsBloc>().add(
-      RegisterButtonPressed(
-        username: emailController.text,
-        password: passwordController.text
-      )
-    );
+    context.bloc<CredentialsBloc>().add(RegisterButtonPressed(
+        username: emailController.text, password: passwordController.text));
   }
 
   @override
@@ -74,9 +66,7 @@ class _LoginFormState extends State<LoginForm> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              FlutterLogo(
-                size: 70
-              ),
+              FlutterLogo(size: 70),
 
               const Separator(50),
 
@@ -119,12 +109,10 @@ class _LoginFormState extends State<LoginForm> {
               BlocConsumer<CredentialsBloc, CredentialsState>(
                 listener: (context, state) {
                   if (state is CredentialsLoginFailure) {
-                    Scaffold.of(context).showSnackBar(
-                        SnackBar(
-                          duration: const Duration(seconds: 2),
-                          content: Text(context.localize("error_login")),
-                        )
-                    );
+                    Scaffold.of(context).showSnackBar(SnackBar(
+                      duration: const Duration(seconds: 2),
+                      content: Text(context.localize("error_login")),
+                    ));
                   }
                 },
                 builder: (context, state) {
@@ -152,12 +140,10 @@ class _LoginFormState extends State<LoginForm> {
               BlocConsumer<CredentialsBloc, CredentialsState>(
                 listener: (context, state) {
                   if (state is CredentialsRegisterFailure) {
-                    Scaffold.of(context).showSnackBar(
-                        SnackBar(
-                          duration: const Duration(seconds: 2),
-                          content: Text(context.localize("register_login")),
-                        )
-                    );
+                    Scaffold.of(context).showSnackBar(SnackBar(
+                      duration: const Duration(seconds: 2),
+                      content: Text(context.localize("register_login")),
+                    ));
                   }
                 },
                 builder: (context, state) {

@@ -15,9 +15,8 @@ class WelcomePage extends StatelessWidget {
         actions: [
           IconButton(
             icon: const Icon(Icons.exit_to_app),
-            onPressed: () => context
-              .bloc<AuthenticationBloc>()
-              .add(LoggedOut()),
+            onPressed: () =>
+                context.bloc<AuthenticationBloc>().add(LoggedOut()),
           )
         ],
       ),

@@ -32,10 +32,8 @@ class CredentialsBloc extends Bloc<CredentialsEvent, CredentialsState> {
     yield CredentialsLoginLoading();
 
     try {
-      final success = await userRepository.authenticate(
-        event.username,
-        event.password
-      );
+      final success =
+          await userRepository.authenticate(event.username, event.password);
 
       if (success) {
         authenticationBloc.add(const LoggedIn());
@@ -52,10 +50,8 @@ class CredentialsBloc extends Bloc<CredentialsEvent, CredentialsState> {
     yield CredentialsRegisterLoading();
 
     try {
-      final success = await userRepository.register(
-        event.username,
-        event.password
-      );
+      final success =
+          await userRepository.register(event.username, event.password);
 
       if (success) {
         authenticationBloc.add(const LoggedIn());
@@ -67,5 +63,4 @@ class CredentialsBloc extends Bloc<CredentialsEvent, CredentialsState> {
       yield CredentialsRegisterFailure();
     }
   }
-
 }

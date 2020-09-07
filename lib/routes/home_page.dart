@@ -13,7 +13,8 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin {
+class _HomePageState extends State<HomePage>
+    with SingleTickerProviderStateMixin {
   TabController tabController;
 
   @override
@@ -33,14 +34,12 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
 
   /// Sliding animation to show the login form
   void loginTransition() {
-    if (tabController.index != 1)
-      tabController.animateTo(1);
+    if (tabController.index != 1) tabController.animateTo(1);
   }
 
   /// Sliding animation to show the welcome page
   void logoutTransition() {
-    if (tabController.index != 0)
-      tabController.animateTo(0);
+    if (tabController.index != 0) tabController.animateTo(0);
   }
 
   @override

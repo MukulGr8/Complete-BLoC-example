@@ -39,7 +39,6 @@ class AppLocalization {
       "password": "Password",
       "error_firebase": "Couldn't load Firebase",
     },
-
     "it": {
       "title": "Login app",
       "login": "Entra",
@@ -53,5 +52,4 @@ class AppLocalization {
       "error_firebase": "Impossibile caricare Firebase",
     },
   };
-
 }

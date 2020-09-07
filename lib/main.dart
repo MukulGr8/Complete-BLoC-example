@@ -10,15 +10,13 @@ import 'package:provider/provider.dart';
 
 import 'blocs/authentication_bloc.dart';
 
-void main() => runApp(
-  Provider<TestUserRepository>(
-    create: (_) => const TestUserRepository(
-      fakeEmail: "alberto@miola.it",
-      success: true,
-    ),
-    child: const LoginApp(),
-  )
-);
+void main() => runApp(Provider<TestUserRepository>(
+      create: (_) => const TestUserRepository(
+        fakeEmail: "alberto@miola.it",
+        success: true,
+      ),
+      child: const LoginApp(),
+    ));
 
 class LoginApp extends StatelessWidget {
   const LoginApp();
@@ -32,7 +30,6 @@ class LoginApp extends StatelessWidget {
       child: MaterialApp(
         initialRoute: RouteGenerator.homePage,
         onGenerateRoute: RouteGenerator.generateRoute,
-
         localizationsDelegates: [
           const AppLocalizationDelegate(),
           GlobalMaterialLocalizations.delegate,
@@ -41,12 +38,11 @@ class LoginApp extends StatelessWidget {
         ],
         supportedLocales: [
           Locale.fromSubtags(languageCode: "en"),
-          Locale.fromSubtags(languageCode: "it"), ],
-
+          Locale.fromSubtags(languageCode: "it"),
+        ],
         onGenerateTitle: (context) => context.localize("title"),
         debugShowCheckedModeBanner: false,
       ),
     );
   }
-
 }

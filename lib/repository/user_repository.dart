@@ -15,5 +15,4 @@ abstract class UserRepository {
 
   /// Logout
   Future<void> logOut();
-
 }
