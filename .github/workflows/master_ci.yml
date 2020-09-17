@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - master
-    paths:
-      - ".github/workflows/replay_bloc.yaml"
-      - "packages/replay_bloc/**"
 
   pull_request:
     branches:
