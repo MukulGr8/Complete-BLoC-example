@@ -1,8 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 
-import 'package:flutter_app/localization/localization_delegate.dart';
-
 /// Adds an useful localization method on a [BuildContext]
 extension LocalizationExt on BuildContext {
   String localize(String value) {

@@ -24,7 +24,7 @@ class FirebaseUserRepository extends UserRepository {
   /// Authentication on Firebase with username and password
   Future<bool> authenticate(String username, String password) async {
     try {
-      final result = await FirebaseAuth.instance
+      await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: username, password: password);
 
       return true;
@@ -39,7 +39,7 @@ class FirebaseUserRepository extends UserRepository {
   /// Registration on Firebase with username and password
   Future<bool> register(String username, String password) async {
     try {
-      final result = await FirebaseAuth.instance.createUserWithEmailAndPassword(
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: username,
         password: password,
       );

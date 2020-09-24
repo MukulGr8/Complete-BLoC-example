@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/localization/localization_delegate.dart';
-import 'package:flutter_app/repository/user_repository/firebase_repository.dart';
 import 'package:flutter_app/repository/user_repository/test_repository.dart';
 import 'package:flutter_app/routes.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
