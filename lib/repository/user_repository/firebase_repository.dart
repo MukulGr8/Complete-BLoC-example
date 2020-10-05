@@ -4,24 +4,16 @@ import 'package:flutter_app/repository/user_repository.dart';
 
 /// Registration and authentication via Firebase
 class FirebaseUserRepository extends UserRepository {
+  /// Firebase authentication repository
   const FirebaseUserRepository();
 
   @override
-
-  /// Email of the signed user
-  String get signedEmail {
-    final user = FirebaseAuth.instance.currentUser;
-
-    if (user != null) {
-      return user.email;
-    } else {
-      return "";
-    }
-  }
+  String get signedEmail => 
+      FirebaseAuth.instance
+          .currentUser
+          .email ?? "-";
 
   @override
-
-  /// Authentication on Firebase with username and password
   Future<bool> authenticate(String username, String password) async {
     try {
       await FirebaseAuth.instance
@@ -35,8 +27,6 @@ class FirebaseUserRepository extends UserRepository {
   }
 
   @override
-
-  /// Registration on Firebase with username and password
   Future<bool> register(String username, String password) async {
     try {
       await FirebaseAuth.instance.createUserWithEmailAndPassword(
@@ -52,7 +42,5 @@ class FirebaseUserRepository extends UserRepository {
   }
 
   @override
-
-  /// Logout from Firebase
   Future<void> logOut() => FirebaseAuth.instance.signOut();
 }

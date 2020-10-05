@@ -12,7 +12,7 @@ void main() {
     'Authentication successful',
     build: () => AuthenticationBloc(authenticationRepository),
     act: (bloc) => bloc.add(const LoggedIn()),
-    expect: <AuthenticationState>[
+    expect: const <AuthenticationState>[
       AuthenticationSuccess(),
     ],
   );
@@ -21,7 +21,7 @@ void main() {
     'Authentication failed',
     build: () => AuthenticationBloc(authenticationRepository),
     act: (bloc) => bloc.add(const LoggedOut()),
-    expect: <AuthenticationState>[
+    expect: const <AuthenticationState>[
       AuthenticationLoading(),
       AuthenticationRevoked(),
     ],

@@ -7,15 +7,15 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 /// Home widget containing a tab that programmatically swipes between the
 /// login form and the welcome page.
 class HomePage extends StatefulWidget {
+  /// App's home page
   const HomePage();
 
   @override
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage>
-    with SingleTickerProviderStateMixin {
-  TabController tabController;
+class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin {
+  late final TabController tabController;
 
   @override
   void initState() {

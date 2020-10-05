@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/blocs/authentication_bloc.dart';
-import 'package:flutter_app/blocs/login_bloc.dart';
+import 'package:flutter_app/blocs/credentials_bloc.dart';
 import 'package:flutter_app/localization/app_localization.dart';
 import 'package:flutter_app/repository/user_repository/test_repository.dart';
 import 'package:flutter_app/widgets/login_form.dart';

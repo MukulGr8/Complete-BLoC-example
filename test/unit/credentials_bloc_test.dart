@@ -1,6 +1,6 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_app/blocs/authentication_bloc.dart';
-import 'package:flutter_app/blocs/login_bloc.dart';
+import 'package:flutter_app/blocs/credentials_bloc.dart';
 import 'package:flutter_app/repository/user_repository/test_repository.dart';
 
 class MockAuthenticationBloc extends MockBloc<AuthenticationState>

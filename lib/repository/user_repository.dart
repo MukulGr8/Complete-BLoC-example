@@ -2,15 +2,16 @@
 /// by a provider. It can also be used to create "mock" classes for easy
 /// unit testing.
 abstract class UserRepository {
+  /// Creates the repository for authenticating an user
   const UserRepository();
 
   /// Email of the signed user
   String get signedEmail;
 
-  /// Login with usernamne and password
+  /// Login with username and password
   Future<bool> authenticate(String username, String password);
 
-  /// Register with username and password
+  /// Registration with username and password
   Future<bool> register(String username, String password);
 
   /// Logout
