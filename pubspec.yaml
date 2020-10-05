@@ -4,7 +4,7 @@ description: A complete example of a Flutter app built with flutter_bloc
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.10.0 <3.0.0"
+  sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
   flutter:

@@ -3,14 +3,11 @@ import 'package:flutter_app/repository/user_repository.dart';
 
 /// Registration and authentication mock (for testing)
 class TestUserRepository extends UserRepository {
-  /// The email of the user
   final String fakeEmail;
-  /// Determines whether the methods will fail or not
   final bool success;
-  /// Mock authentication repository (for testing)
   const TestUserRepository({
-    required this.fakeEmail,
-    required this.success,
+    @required this.fakeEmail,
+    @required this.success,
   });
 
   @override

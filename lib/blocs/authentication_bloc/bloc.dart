@@ -5,24 +5,22 @@ import 'events.dart';
 import 'states.dart';
 
 /// Manages the authentication state of the app
-class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> {
-  ///
+class AuthenticationBloc
+    extends Bloc<AuthenticationEvent, AuthenticationState> {
   final UserRepository userRepository;
-
-  /// Creates a Bloc which takes care of managing the authentications state
-  /// of the app. It requires a [userRepository] to do the actual logout.
-  AuthenticationBloc(this.userRepository) : super(const AuthenticationInit());
+  AuthenticationBloc(this.userRepository) : super(AuthenticationInit());
 
   @override
-  Stream<AuthenticationState> mapEventToState(AuthenticationEvent event) async* {
+  Stream<AuthenticationState> mapEventToState(
+      AuthenticationEvent event) async* {
     if (event is LoggedIn) {
-      yield const AuthenticationSuccess();
+      yield AuthenticationSuccess();
     }
 
     if (event is LoggedOut) {
-      yield const AuthenticationLoading();
+      yield AuthenticationLoading();
       await userRepository.logOut();
-      yield const AuthenticationRevoked();
+      yield AuthenticationRevoked();
     }
   }
 }

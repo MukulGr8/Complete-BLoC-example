@@ -1,13 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/blocs/credentials_bloc.dart';
+import 'package:flutter_app/blocs/login_bloc.dart';
 import 'package:flutter_app/widgets/separator.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_app/localization/app_localization.dart';
 
 /// Actual login form, with validation, asking for email and password
 class LoginForm extends StatefulWidget {
-  /// Login form asking for email and password
   const LoginForm();
 
   @override
@@ -19,12 +18,7 @@ class _LoginFormState extends State<LoginForm> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
-  void a(BuildContext context) {
-    String c = context.localize("value");
-    String c2 = AppLocalization.of(context)?.locale.languageCode ?? "-";
-  }
-
-  String? validateEmail(String input) {
+  String validateEmail(String input) {
     if ((input.length > 10) && (input.contains("@"))) {
       return null;
     } else {
@@ -32,7 +26,7 @@ class _LoginFormState extends State<LoginForm> {
     }
   }
 
-  String? validatePassword(String input) {
+  String validatePassword(String input) {
     if (input.length > 5) {
       return null;
     } else {
@@ -41,21 +35,13 @@ class _LoginFormState extends State<LoginForm> {
   }
 
   void loginButtonPressed(BuildContext context) {
-    context.bloc<CredentialsBloc>().add(
-        LoginButtonPressed(
-            username: emailController.text,
-            password: passwordController.text
-        )
-    );
+    context.bloc<CredentialsBloc>().add(LoginButtonPressed(
+        username: emailController.text, password: passwordController.text));
   }
 
   void registerButtonPressed(BuildContext context) {
-    context.bloc<CredentialsBloc>().add(
-        RegisterButtonPressed(
-            username: emailController.text,
-            password: passwordController.text
-        )
-    );
+    context.bloc<CredentialsBloc>().add(RegisterButtonPressed(
+        username: emailController.text, password: passwordController.text));
   }
 
   @override
@@ -67,8 +53,6 @@ class _LoginFormState extends State<LoginForm> {
 
   @override
   Widget build(BuildContext context) {
-    MaterialLocalizations.of(context)
-
     return LayoutBuilder(
       builder: (context, data) {
         var baseWidth = 250.0;
@@ -82,7 +66,7 @@ class _LoginFormState extends State<LoginForm> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const FlutterLogo(size: 70),
+              FlutterLogo(size: 70),
 
               const Separator(50),
 
@@ -137,14 +121,12 @@ class _LoginFormState extends State<LoginForm> {
                   }
 
                   return RaisedButton(
-                    key: const Key("loginButton"),
+                    key: Key("loginButton"),
                     child: Text(context.localize("login")),
                     color: Colors.lightGreen,
                     textColor: Colors.white,
                     onPressed: () {
-                      final state = formKey.currentState;
-
-                      if (state?.validate() ?? false) {
+                      if (formKey.currentState.validate()) {
                         loginButtonPressed(context);
                       }
                     },
@@ -173,9 +155,7 @@ class _LoginFormState extends State<LoginForm> {
                     key: Key("registerButton"),
                     child: Text(context.localize("register")),
                     onPressed: () {
-                      final state = formKey.currentState;
-
-                      if (state?.validate() ?? false) {
+                      if (formKey.currentState.validate()) {
                         registerButtonPressed(context);
                       }
                     },

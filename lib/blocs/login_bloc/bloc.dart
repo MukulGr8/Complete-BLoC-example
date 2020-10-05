@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_app/blocs/authentication_bloc/bloc.dart';
 import 'package:flutter_app/blocs/authentication_bloc/events.dart';
 import 'package:flutter_app/repository/user_repository.dart';
@@ -9,17 +10,12 @@ import 'events.dart';
 
 /// Manages the login state of the app
 class CredentialsBloc extends Bloc<CredentialsEvent, CredentialsState> {
-  /// Data about the user
   final UserRepository userRepository;
-
-  ///
   final AuthenticationBloc authenticationBloc;
-
-  /// Creates a Bloc which takes care of managing the login state of the app.
   CredentialsBloc({
-    required this.authenticationBloc,
-    required this.userRepository,
-  }) : super(const CredentialsInitial());
+    @required this.authenticationBloc,
+    @required this.userRepository,
+  }) : super(CredentialsInitial());
 
   @override
   Stream<CredentialsState> mapEventToState(CredentialsEvent event) async* {
@@ -33,7 +29,7 @@ class CredentialsBloc extends Bloc<CredentialsEvent, CredentialsState> {
   }
 
   Stream<CredentialsState> _loginPressed(CredentialsEvent event) async* {
-    yield const CredentialsLoginLoading();
+    yield CredentialsLoginLoading();
 
     try {
       final success =
@@ -41,17 +37,17 @@ class CredentialsBloc extends Bloc<CredentialsEvent, CredentialsState> {
 
       if (success) {
         authenticationBloc.add(const LoggedIn());
-        yield const CredentialsInitial();
+        yield CredentialsInitial();
       } else {
-        yield const CredentialsLoginFailure();
+        yield CredentialsLoginFailure();
       }
     } on FirebaseAuthException {
-      yield const CredentialsLoginFailure();
+      yield CredentialsLoginFailure();
     }
   }
 
   Stream<CredentialsState> _registerPressed(CredentialsEvent event) async* {
-    yield const CredentialsRegisterLoading();
+    yield CredentialsRegisterLoading();
 
     try {
       final success =
@@ -59,12 +55,12 @@ class CredentialsBloc extends Bloc<CredentialsEvent, CredentialsState> {
 
       if (success) {
         authenticationBloc.add(const LoggedIn());
-        yield const CredentialsInitial();
+        yield CredentialsInitial();
       } else {
-        yield const CredentialsRegisterFailure();
+        yield CredentialsRegisterFailure();
       }
     } on FirebaseAuthException {
-      yield const CredentialsRegisterFailure();
+      yield CredentialsRegisterFailure();
     }
   }
 }

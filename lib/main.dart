@@ -9,17 +9,13 @@ import 'package:provider/provider.dart';
 
 import 'blocs/authentication_bloc.dart';
 
-import 'dart:io' show Platform;
-
-void main() => runApp(
-    Provider<TestUserRepository>(
+void main() => runApp(Provider<TestUserRepository>(
       create: (_) => const TestUserRepository(
         fakeEmail: "alberto@miola.it",
         success: true,
       ),
       child: const LoginApp(),
-    )
-);
+    ));
 
 class LoginApp extends StatelessWidget {
   const LoginApp();
@@ -39,7 +35,7 @@ class LoginApp extends StatelessWidget {
           GlobalCupertinoLocalizations.delegate,
           GlobalWidgetsLocalizations.delegate,
         ],
-        supportedLocales: const [
+        supportedLocales: [
           Locale.fromSubtags(languageCode: "en"),
           Locale.fromSubtags(languageCode: "it"),
         ],
